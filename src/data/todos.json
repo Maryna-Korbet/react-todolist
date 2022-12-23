@@ -1,0 +1,6 @@
+[
+    { "id": "id-1", "text": "Read a book", "completed": false },
+    { "id": "id-2", "text": "Write an abstract", "completed": false },
+    { "id": "id-3", "text": "Buy products in the store", "completed": false },
+    { "id": "id-4", "text": "Make lasagne for dinner", "completed": false }
+]

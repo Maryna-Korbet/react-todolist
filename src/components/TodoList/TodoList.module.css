@@ -1,0 +1,30 @@
+.container{
+    width: 600px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 1px 10px;
+    border: 1px solid #4CAF50; 
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+.text {
+    margin-right: 20px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
