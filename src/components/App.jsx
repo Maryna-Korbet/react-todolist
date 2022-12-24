@@ -4,23 +4,29 @@ import initialTodos from '../data/todos.json';
 
 export class App extends Component {
   state = {
-    todos:initialTodos,
+    todos: initialTodos,
+  };
+
+  deleteTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id!==todoId),
+    }));
   };
 
   render() {
     const { todos } = this.state;
+    const totalTodosCount = todos.length;
+    const completedTodosCount = todos.reduce(
+      (acc, todo) => (todo.completed ? acc + 1 : acc), 0,);
 
     return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#010101'
-      }}
-    >
-        <TodoList todos={todos} />
+      <div>
+        <div>
+          <p>Total number: {totalTodosCount}</p>
+          <p>Number of completed tasks: {completedTodosCount}</p>
+        </div>
+        
+        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
     </div>
   );
   }
