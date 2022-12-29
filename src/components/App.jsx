@@ -13,6 +13,15 @@ export class App extends Component {
     }));
   };
 
+  toggleCompleted = todoId => {
+    this.setState(({todos}) => ({
+      todos: todos.map(todo =>
+          todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
+        ),
+    }));
+  };
+
+
   render() {
     const { todos } = this.state;
     const totalTodosCount = todos.length;
@@ -20,14 +29,17 @@ export class App extends Component {
       (acc, todo) => (todo.completed ? acc + 1 : acc), 0,);
 
     return (
-      <div>
+      <>
         <div>
           <p>Total number: {totalTodosCount}</p>
           <p>Number of completed tasks: {completedTodosCount}</p>
         </div>
         
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
-    </div>
+        <TodoList
+          todos={todos}
+          onDeleteTodo={this.deleteTodo}
+          onToggleCompleted={this.toggleCompleted} />
+    </>
   );
   }
 }

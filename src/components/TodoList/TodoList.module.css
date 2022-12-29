@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     padding: 1px 10px;
-    border: 1px solid #4CAF50; 
+    border: 1px solid #007FFF; 
     font-size: 30px;
     justify-content: space-between;
 }
@@ -17,7 +17,7 @@
 }
 
 .button {
-    background-color: #4CAF50;
+    background-color: #007FFF;
     border: none;
     padding: 5px 10px;
     margin-right: 10px;
@@ -29,3 +29,26 @@
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
     border-radius: 3px;
 }
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color .2s ease-in-out;
+    border: 1px solid #fff;
+    margin: 0px 0px 0px 10px;
+}
+
+.checkbox:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.button:hover {
+    background: #0066b2;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+
