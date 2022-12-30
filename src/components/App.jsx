@@ -1,11 +1,26 @@
 import { Component } from "react";
+import shortid from "shortid";
 import TodoList from "./TodoList/TodoList";
+import TodoEditor from "./TodoEditor/TodoEditor";
 import initialTodos from '../data/todos.json';
 
 export class App extends Component {
   state = {
     todos: initialTodos,
   };
+
+  addTodo = text => {
+    const newTodo = {
+      id: shortid.generate(),
+      text,
+      completed: false,
+    };
+
+    this.setState(({todos}) => ({
+      todos: [...todos, newTodo],
+    })
+    );
+  }
 
   deleteTodo = todoId => {
     this.setState(prevState => ({
@@ -34,6 +49,8 @@ export class App extends Component {
           <p>Total number: {totalTodosCount}</p>
           <p>Number of completed tasks: {completedTodosCount}</p>
         </div>
+
+        <TodoEditor onSubmit={this.addTodo} />
         
         <TodoList
           todos={todos}

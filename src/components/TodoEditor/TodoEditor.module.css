@@ -1,0 +1,33 @@
+.form {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border: 1px solid #007FFF;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #007FFF;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.button:hover {
+    background: #0066b2;
+}
+
+textarea {
+    border: 1px solid #007FFF;
+    border-radius: 4px;
+    font-size: 20px;
+    resize: none;
+}

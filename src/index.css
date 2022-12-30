@@ -14,9 +14,14 @@ body {
   align-items: center;
   color: #010101;
   font-size: 30px;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+margin: 10px 10px;
 }
