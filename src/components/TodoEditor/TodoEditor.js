@@ -12,7 +12,7 @@ class TodoEditor extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
         this.props.onSubmit(this.state.message);
         this.setState({message:''});
     }
