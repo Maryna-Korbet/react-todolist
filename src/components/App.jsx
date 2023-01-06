@@ -12,6 +12,27 @@ export class App extends Component {
     filter: '',
   };
 
+    componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const persedTodos = JSON.parse(todos);
+
+    if (persedTodos) {
+      this.setState({ todos: persedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
+
   addTodo = text => {
     const newTodo = {
       id: shortid.generate(),
@@ -57,27 +78,6 @@ export class App extends Component {
 
     return todos.reduce(
       (acc, todo) => (todo.completed ? acc + 1 : acc), 0,);
-  }
-
-  componentDidMount() {
-    console.log('App componentDidMount');
-
-    const todos = localStorage.getItem('todos');
-    const persedTodos = JSON.parse(todos);
-
-    if (persedTodos) {
-      this.setState({ todos: persedTodos });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('App componentDidUpdate');
-
-    if (this.state.todos !== prevState.todos) {
-      console.log('Обновилось поле todos, записываю todos в хранилище');
-      
-      localStorage.setItem('todos', JSON.stringify(this.state.todos));
-    }
   }
   
   render() {

@@ -12,44 +12,12 @@
     justify-content: space-between;
 }
 
-.text {
-    margin-right: 20px;
-}
 
-.button {
-    background-color: #007FFF;
-    border: none;
-    padding: 5px 10px;
-    margin-right: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-}
 
-.button:hover {
-    background: #0066b2;
-    border: 1px solid rgba(255, 255, 255, 0);
-} 
 
-.checkbox {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 10px;
-    transition: background-color .2s ease-in-out;
-    border: 1px solid #fff;
-    margin: 0px 0px 0px 10px;
-}
 
-.checkbox:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0);
-}
+
+
 
 
 
