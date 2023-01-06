@@ -59,6 +59,26 @@ export class App extends Component {
       (acc, todo) => (todo.completed ? acc + 1 : acc), 0,);
   }
 
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const persedTodos = JSON.parse(todos);
+
+    if (persedTodos) {
+      this.setState({ todos: persedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
   
   render() {
     const { todos, filter } = this.state;
